@@ -22,12 +22,12 @@ Projet Python simple permettant d'effectuer des opérations mathématiques via u
 ## Technologies utilisées
 - Python 3
 - VSCode
-
-## Comment lancer le projet
-```bash
-python calculatrice.py
-
+- 
 ## Amelioration nécessaire pour la semaine prochaine
 -snake_case (respect des règles d'écriture)
 -f-strings (au lieu de print)
 -correction double appel division
+
+## Comment lancer le projet
+```bash
+python Calculatrice.py
