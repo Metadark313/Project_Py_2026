@@ -36,9 +36,21 @@ def multiplication(a,b):
 #Opération de division
 #pré : a et b sont des int
 #post : return a/b
-#TODO : gestion erreur division par 0
 def division(a,b):
-    return a / b
+    if b == 0:
+        print("Erreur, une division par 0 est impossible")
+        return None
+    else:
+        return a / b
+    
+#Fonction demande nombre
+def encodage_chiffre(message):
+    while True:
+        try:
+            chiffre = int(input(message))
+            return chiffre
+        except ValueError:
+            print("Erreur d'encodage. Veuillez écrire un nombre entier")
 
 
 #main
@@ -55,10 +67,11 @@ def main():
         #menu du calcul
         if choix == '1':
 
-            #input des 2 nombres. a et b pour le calcul
-            #TODO : gérer les erreurs de type de variable
-            a = int(input("Entrez votre premier nombre : "))
-            b = int(input("Entrez votre second nombre : "))
+            #input des 2 nombres, a et b pour le calcul
+            a = encodage_chiffre("Entrez votre premier nombre : ")
+            b = encodage_chiffre("Entrez votre second nombre : ")
+
+
 
             #afficher menu des opérations
             Afficher_menu_opération()
@@ -73,13 +86,14 @@ def main():
             elif choix == '3':
                 print("La multiplication de %d et %d est : %d" % (a,b,multiplication(a,b)))
             elif choix == '4':
-                print("La division de %d et %d est : %d" % (a,b,division(a,b)))
+                if division(a,b) is not None:
+                    print("La division de %d et %d est : %d" % (a,b,division(a,b)))
             elif choix == '5':
                 print("Fermeture calculatrice. Au revoir!")
                 break
             else :
                 print("Choix invalide")  
-                
+
         #menu de sortie
         elif choix == '2':
             print("Fermeture calculatrice. Au revoir!")
